@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Unreachable</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .error-box {
+            margin-top: 30px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Netlify Could Not Be Reached</h1>
+        <p>The server at this address is not responding. This could be due to a DNS configuration error or a temporary service outage.</p>
+        
+        <div class="error-box">
+            Status: Connection_Failed<br>
+            Error Code: <span id="error-code">---</span>
+        </div>
+    </div>
+
+    <script>
+        // Generates a random 8-character hex error code
+        const randomHex = Math.floor(Math.random() * 0xffffffff).toString(16).toUpperCase().padStart(8, '0');
+        document.getElementById('error-code').textContent = `0x${randomHex}`;
+    </script>
+</body>
+</html>
